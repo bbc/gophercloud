@@ -118,6 +118,7 @@ type Capsule struct {
 	Host string `json:"host"`
 }
 
+// Missing tty
 type Container struct {
 	// The Container IP addresses
 	Addresses map[string][]Address `json:"addresses"`
@@ -215,6 +216,18 @@ type Container struct {
 
 	// Security groups for the container
 	SecurityGroups []string `json:"security_groups"`
+
+	// The registry id for the container
+	RegistryID string `json:"registry_id"`
+
+	// The CPU policy for the container
+	CPUPolicy string `json:"cpu_policy"`
+
+	// The healthcheck for the container
+	Healthcheck map[string]string `json:"healthcheck"`
+
+	// The tty for the container
+	TTY bool `json:"tty"`
 }
 
 type Address struct {
