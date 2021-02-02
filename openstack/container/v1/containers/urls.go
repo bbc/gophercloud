@@ -19,3 +19,7 @@ func listURL(c *gophercloud.ServiceClient) string {
 func deleteURL(c *gophercloud.ServiceClient, id string) string {
 	return c.ServiceURL("containers", id)
 }
+
+func startURL(c *gophercloud.ServiceClient, id string) string {
+	return c.ServiceURL("containers", id, "start")
+}

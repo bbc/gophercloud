@@ -135,3 +135,10 @@ func ForceDelete(client *gophercloud.ServiceClient, id string) (r DeleteResult) 
 	_, r.Header, r.Err = gophercloud.ParseResponse(resp, err)
 	return
 }
+
+// Start implements start capsule request.
+func Start(client *gophercloud.ServiceClient, id string) (r StartResult) {
+	resp, err := client.Post(startURL(client, id), nil, nil, &gophercloud.RequestOpts{OkCodes: []int{202}})
+	_, r.Header, r.Err = gophercloud.ParseResponse(resp, err)
+	return
+}

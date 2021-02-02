@@ -34,6 +34,11 @@ type DeleteResult struct {
 	gophercloud.ErrResult
 }
 
+// StartResult represents the result of a start operation.
+type StartResult struct {
+	gophercloud.ErrResult
+}
+
 type ContainerPage struct {
 	pagination.LinkedPageBase
 }
